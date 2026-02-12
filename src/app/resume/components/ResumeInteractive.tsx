@@ -70,10 +70,12 @@ export default function ResumeInteractive() {
     portfolio: "https://shreya-portfolio.com",
   };
 
-  const professionalSummary = `Analytical and detail-oriented engineering professional transitioning into data analysis and data
-science. Strong background in instrumentation engineering with hands-on experience in machine
-learning, predictive modeling, and data-driven problem-solving. Passionate about leveraging Python,
-SQL, and statistical methods to deliver insights, optimize processes, and support decision-making.`;
+  const professionalSummary = `Engineering graduate with strong applied skills in data science,
+machine learning, and AI-driven solution development. Proven track record of delivering reliable,
+data-driven outcomes, recognized with “Performer of the Month” three times for consistency and
+impact. Known for strong focus, effective time management, and the ability to translate complex
+data into meaningful insights. Brings a unique blend of creativity and patience, enabling thoughtful
+problem-solving in fast-paced, real-world environments.`;
 
   const experiences: Experience[] = [
     {

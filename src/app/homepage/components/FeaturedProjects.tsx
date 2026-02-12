@@ -2,63 +2,50 @@ import Link from 'next/link';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  image: string;
-  alt: string;
-  tags: string[];
-  metrics: {
-    label: string;
-    value: string;
-  }[];
-}
+import type { Project } from '@/type/project';
 
 const FeaturedProjects = () => {
   const projects: Project[] = [
-  {
+  
+{
     id: 1,
-    title: 'Customer Churn Prediction Model',
+    title: "Generative AI Test Data Synthesis",
+    category: "Generative AI",
     description:
-    'Developed a machine learning model to predict customer churn with 92% accuracy, enabling proactive retention strategies and reducing churn by 18%.',
-    category: 'Machine Learning',
-    image: "https://images.unsplash.com/photo-1663780852957-0e1f8bda3d0d",
-    alt: 'Data scientist analyzing customer behavior charts on multiple computer screens with colorful graphs and metrics',
-    tags: ['Python', 'Scikit-learn', 'XGBoost', 'Pandas'],
-    metrics: [
-    { label: 'Accuracy', value: '92%' },
-    { label: 'Churn Reduction', value: '18%' }]
-
+      "Generated realistic synthetic datasets using generative models to preserve privacy while maintaining statistical similarity to real-world data.",
+    tags: ["GAN", "Synthetic Data"],
+    technologies: ["Python", "GANs", "TensorFlow"],
+    githubUrl: "https://github.com/shreya/test-data-synthesis",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    alt: "Loading",
+    status: 'completed'
   },
+
   {
     id: 2,
-    title: 'Real-time Sentiment Analysis Dashboard',
+    title: "AI Hallucination Detector",
+    category: "LLM Evaluation",
     description:
-    'Built an interactive dashboard for real-time social media sentiment analysis using NLP techniques, processing 10K+ tweets per hour with 88% sentiment classification accuracy.',
-    category: 'NLP & Analytics',
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74",
-    alt: 'Modern analytics dashboard displaying real-time sentiment analysis graphs with green positive and red negative indicators on dark interface',
-    tags: ['Python', 'NLTK', 'Streamlit', 'MongoDB'],
-    metrics: [
-    { label: 'Processing Speed', value: '10K/hr' },
-    { label: 'Accuracy', value: '88%' }]
-
+      "Designed a system to detect hallucinations in LLM outputs by validating responses against factual references and confidence scoring.",
+    tags: ["LLM", "Evaluation"],
+    technologies: ["Python", "LLMs", "Streamlit"],
+    githubUrl: "https://github.com/shreya/ai-hallucination-detector",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    alt: "Loading",
+    status: 'completed'
   },
   {
     id: 3,
-    title: 'Predictive Maintenance System',
+    title: "Resume Skill Matcher",
+    category: "NLP",
     description:
-    'Engineered a predictive maintenance solution for manufacturing equipment using IoT sensor data and deep learning, reducing downtime by 35% and maintenance costs by 28%.',
-    category: 'Deep Learning',
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_10be1cbe1-1763644165696.png",
-    alt: 'Industrial manufacturing equipment with IoT sensors and digital monitoring displays showing predictive maintenance metrics',
-    tags: ['TensorFlow', 'Keras', 'Time Series', 'IoT'],
-    metrics: [
-    { label: 'Downtime Reduction', value: '35%' },
-    { label: 'Cost Savings', value: '28%' }]
-
+      "Developed an NLP system that matches resumes to job descriptions by extracting skills and computing similarity scores to automate candidate screening.",
+    tags: ["NLP", "Text Processing"],
+    technologies: ["Python", "TF-IDF", "Cosine Similarity", "Flask"],
+    githubUrl: "https://github.com/shreya/resume-skill-matcher",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+    alt: "Loading",
+    status: 'completed'
   }];
 
 
@@ -91,7 +78,7 @@ const FeaturedProjects = () => {
               <div className="relative h-48 overflow-hidden">
                 <AppImage
                 src={project.image}
-                alt={project.alt}
+                alt={project.alt ?? project.title}
                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
 
                 <div className="absolute top-4 left-4">
@@ -122,7 +109,7 @@ const FeaturedProjects = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
-                  {project.metrics.map((metric) =>
+                  {project.metrics?.map((metric) =>
                 <div key={metric.label}>
                       <p className="text-xs text-text-secondary">
                         {metric.label}

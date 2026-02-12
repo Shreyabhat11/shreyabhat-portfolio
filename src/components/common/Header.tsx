@@ -120,7 +120,7 @@ const Header = () => {
 
           <div className="hidden lg:flex items-center space-x-3">
             <a
-              href="https://github.com/shreya"
+              href="https://github.com/Shreyabhat11"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-muted transition-all duration-250 focus-ring"
@@ -129,7 +129,7 @@ const Header = () => {
               <Icon name="CodeBracketIcon" size={20} />
             </a>
             <a
-              href="https://linkedin.com/in/shreya"
+              href="https://www.linkedin.com/in/shreyabhat11/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-muted transition-all duration-250 focus-ring"
@@ -180,7 +180,7 @@ const Header = () => {
 
           <div className="px-4 py-6 border-t border-border space-y-3">
             <a
-              href="https://github.com/shreya"
+              href="https://github.com/Shreyabhat11"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 px-4 py-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-muted transition-all duration-250"
@@ -189,7 +189,7 @@ const Header = () => {
               <span className="text-base font-medium">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com/in/shreya"
+              href="https://www.linkedin.com/in/shreyabhat11/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-3 px-4 py-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-muted transition-all duration-250"

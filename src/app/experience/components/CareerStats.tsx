@@ -39,7 +39,7 @@ const CareerStats = () => {
   if (!isHydrated) {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {[1, 2, 3, 4].map((i) => (
+        {[1, 2].map((i) => (
           <div key={i} className="bg-card rounded-xl p-6 shadow-card animate-pulse">
             <div className="h-12 w-12 bg-muted rounded-lg mb-4"></div>
             <div className="h-8 bg-muted rounded w-1/2 mb-2"></div>

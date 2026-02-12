@@ -41,48 +41,59 @@ const ExperienceTimeline = () => {
   }, []);
 
   const experiences: ExperienceItem[] = [
-    {
-      id: 1,
-      company: "CIPLA Ltd",
-      role: "Engineering Trainee",
-      duration: "1 year",
-      startDate: "June 2024",
-      endDate: "June 2025",
-      location: "Goa, India",
-      type: "Full-time",
-      description: "Leading data-driven initiatives to optimize pharmaceutical manufacturing processes and improve operational efficiency through advanced analytics and machine learning solutions.",
-      achievements: [
-        {
-          id: 1,
-          title: "Process Optimization",
-          description: "Monitored and analyzed real-time process data using BMS/SCADA systems, improving equipment performance and reliability."
-          
-        },
-        {
-          id: 2,
-          title: "Cost Savings",
-          description: "Maintained calibration and performance logs of critical instruments, supporting data-driven predictive maintenance and reducing downtime."
-        },
-        {
-          id: 3,
-          title: "Quality Improvement",
-          description: "Prepared structured reports and visualizations of sensor data, reducing troubleshooting time by 15% and supporting informed operational decisions."
-        }
-      ],
-      skills: [
-        { id: 1, name: "Python", category: "Programming" },
-        { id: 2, name: "Machine Learning", category: "AI/ML" },
-        { id: 3, name: "TensorFlow", category: "AI/ML" },
-        { id: 4, name: "SQL", category: "Database" },
-        { id: 5, name: "Power BI", category: "Visualization" },
-        { id: 6, name: "Statistical Analysis", category: "Analytics" },
-        { id: 7, name: "Process Optimization", category: "Domain" },
-        { id: 8, name: "Computer Vision", category: "AI/ML" }
-      ],
-            projects: ["Manufacturing Data Pipeline", "Process Efficiency Dashboard", "Quality Metrics Tracking System", "Workflow Automation Tool", "Project Tracking Dashboard"]
+  {
+    id: 1,
+    company: "CIPLA Ltd",
+    role: "Engineering Trainee – Instrumentation Engineer",
+    duration: "1 year",
+    startDate: "2024",
+    endDate: "2025",
+    location: "Goa, India",
+    type: "Full-time",
 
-    }
-  ];
+    description:
+      "Worked on pharmaceutical manufacturing operations by monitoring real-time process data, maintaining instrumentation reliability, and supporting data-driven decision making using BMS/SCADA systems.",
+
+    achievements: [
+      {
+        id: 1,
+        title: "Real-time Process Monitoring",
+        description:
+          "Monitored and analyzed real-time process data using BMS/SCADA systems to improve equipment performance and reliability."
+      },
+      {
+        id: 2,
+        title: "Predictive Maintenance Support",
+        description:
+          "Maintained calibration and performance logs of critical instruments, enabling data-driven maintenance and reducing downtime."
+      },
+      {
+        id: 3,
+        title: "Operational Reporting",
+        description:
+          "Prepared structured reports and visualizations of sensor data, reducing troubleshooting time by 15%."
+      },
+      {
+        id: 4,
+        title: "Cross-functional Collaboration",
+        description:
+          "Collaborated with production, quality, and engineering teams to apply insights for better operational efficiency."
+      }
+    ],
+
+    skills: [
+      { id: 1, name: "BMS/SCADA", category: "Domain" },
+      { id: 2, name: "Process Monitoring", category: "Domain" },
+      { id: 3, name: "Instrumentation & Calibration", category: "Domain" },
+      { id: 4, name: "Data Analysis", category: "Analytics" },
+      { id: 5, name: "Reporting & Dashboards", category: "Visualization" },
+      { id: 6, name: "Excel", category: "Analytics" },
+      { id: 7, name: "Python", category: "Programming" },
+      { id: 8, name: "SQL", category: "Database" }
+    ]
+  }
+];
+
 
   const skillCategories = ['all', 'Programming', 'AI/ML', 'Analytics', 'Visualization', 'Database', 'Domain'];
 

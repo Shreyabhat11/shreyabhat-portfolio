@@ -19,42 +19,60 @@ const SkillProgression = () => {
   }, []);
 
   const progression: ProgressionItem[] = [
-    {
-      id: 1,
-      year: "2020",
-      title: "Engineering Foundation",
-      skills: ["Python Basics", "Excel", "Process Engineering", "Technical Documentation"],
-      milestone: "Started career as Engineering Intern"
-    },
-    {
-      id: 2,
-      year: "2021",
-      title: "Data Analytics Transition",
-      skills: ["SQL", "Data Analysis", "Tableau", "Statistical Methods"],
-      milestone: "Joined CIPLA as Engineering Associate"
-    },
-    {
-      id: 3,
-      year: "2022",
-      title: "Advanced Analytics",
-      skills: ["Machine Learning", "Python Advanced", "Power BI", "Data Pipelines"],
-      milestone: "Promoted to Data Science Analyst"
-    },
-    {
-      id: 4,
-      year: "2023",
-      title: "AI/ML Specialization",
-      skills: ["TensorFlow", "Computer Vision", "Deep Learning", "MLOps"],
-      milestone: "Leading data science initiatives"
-    },
-    {
-      id: 5,
-      year: "2024",
-      title: "Leadership & Innovation",
-      skills: ["Team Mentoring", "Strategic Planning", "Advanced ML", "Cloud Computing"],
-      milestone: "Driving organizational data transformation"
-    }
-  ];
+  {
+    id: 1,
+    year: "2021–2024",
+    title: "Instrumentation Engineering Foundation",
+    skills: [
+      "Electronics & Instrumentation",
+      "Sensors & Calibration",
+      "PLC Basics",
+      "Process Control Systems",
+      "Technical Documentation"
+    ],
+    milestone: "Completed B.E. in Electronics & Instrumentation Engineering (BIT Bengaluru)"
+  },
+  {
+    id: 2,
+    year: "2024",
+    title: "Industrial Operations Experience",
+    skills: [
+      "BMS/SCADA Monitoring",
+      "Process Data Collection",
+      "Instrumentation Maintenance",
+      "Troubleshooting",
+      "Operational Reporting"
+    ],
+    milestone: "Joined CIPLA Ltd as Engineering Trainee – Instrumentation Engineer"
+  },
+  {
+    id: 3,
+    year: "2024–2025",
+    title: "Data & Analytics Integration",
+    skills: [
+      "Excel Analytics",
+      "Python",
+      "SQL",
+      "Data Visualization",
+      "Dashboarding"
+    ],
+    milestone: "Applied data-driven insights to reduce troubleshooting time by 15%"
+  },
+  {
+    id: 4,
+    year: "2025 (Ongoing)",
+    title: "Data Science & GenAI Specialization",
+    skills: [
+      "Machine Learning",
+      "Statistics",
+      "Data Science Projects",
+      "Model Building",
+      "Generative AI"
+    ],
+    milestone: "Pursuing PGP in Data Science with specialization in Gen AI"
+  }
+];
+
 
   if (!isHydrated) {
     return (
