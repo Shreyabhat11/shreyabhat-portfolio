@@ -6,36 +6,7 @@ import ProjectFilters from './ProjectFilter';
 import ProjectGrid from './ProjectGrid';
 import ProjectModal from './ProjectModal';
 
-interface Technology {
-  name: string;
-  category: string;
-}
-
-interface Metric {
-  label: string;
-  value: string;
-  icon: string;
-}
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  tags: string[];
-  description: string;
-  challenge: string;
-  methodology: string;
-  outcomes: string[];
-  metrics: Metric[];
-  technologies: Technology[];
-  image: string;
-  alt: string;
-  githubUrl: string;
-  liveUrl?: string;
-  duration: string;
-  status: 'completed' | 'in-progress';
-  featured: boolean;
-}
+import type { Project } from '@/type/project';
 
 const ProjectsInteractive = () => {
   const [isHydrated, setIsHydrated] = useState(false);
@@ -52,283 +23,160 @@ const ProjectsInteractive = () => {
   const projects: Project[] = [
   {
     id: 1,
-    title: 'Customer Churn Prediction System',
-    category: 'Machine Learning',
-    tags: ['Python', 'Scikit-learn', 'XGBoost', 'Data Analysis'],
-    description: 'Developed an advanced machine learning model to predict customer churn with 89% accuracy, enabling proactive retention strategies and reducing customer attrition by 23%.',
-    challenge: 'The telecommunications company faced a 15% annual customer churn rate, resulting in significant revenue loss. Traditional rule-based approaches failed to identify at-risk customers early enough for effective intervention.',
-    methodology: 'Implemented ensemble learning combining Random Forest, XGBoost, and Gradient Boosting algorithms. Performed extensive feature engineering on customer behavior data, transaction history, and service usage patterns. Applied SMOTE for handling class imbalance and used cross-validation for robust model evaluation.',
-    outcomes: [
-    'Achieved 89% prediction accuracy with 0.85 F1-score',
-    'Identified top 10 churn indicators for business strategy',
-    'Reduced false positives by 34% compared to baseline model',
-    'Enabled targeted retention campaigns saving $2.3M annually'],
-
-    metrics: [
-    { label: 'Accuracy', value: '89%', icon: 'ChartBarIcon' },
-    { label: 'F1-Score', value: '0.85', icon: 'BeakerIcon' },
-    { label: 'Cost Savings', value: '$2.3M', icon: 'CurrencyDollarIcon' },
-    { label: 'Churn Reduction', value: '23%', icon: 'ArrowTrendingDownIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'Scikit-learn', category: 'ML Framework' },
-    { name: 'XGBoost', category: 'Algorithm' },
-    { name: 'Pandas', category: 'Data Processing' },
-    { name: 'Matplotlib', category: 'Visualization' }],
-
-    image: "https://images.unsplash.com/photo-1663780852957-0e1f8bda3d0d",
-    alt: 'Data scientist analyzing customer behavior patterns on multiple computer screens with colorful charts and graphs',
-    githubUrl: 'https://github.com/shreya/customer-churn-prediction',
-    liveUrl: 'https://churn-predictor-demo.netlify.app',
-    duration: '4 months',
-    status: 'completed',
-    featured: true
+    title: "Credit Card Fraud Detection",
+    category: "Machine Learning",
+    description:
+      "Built an anomaly detection system using classification models to identify fraudulent credit card transactions with high precision and recall, minimizing financial losses.",
+    tags: ["Python", "Scikit-learn", "XGBoost", "EDA"],
+    technologies: ["Python", "Pandas", "Scikit-learn", "XGBoost"],
+    githubUrl: "https://github.com/shreya/credit-card-fraud-detection",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
+    alt: 'Climate scientist analyzing weather data on computer with multiple screens showing temperature maps and precipitation charts',
+    status: 'completed'
   },
+
   {
     id: 2,
-    title: 'Real-Time Sentiment Analysis Dashboard',
-    category: 'NLP',
-    tags: ['Python', 'NLTK', 'Flask', 'React', 'MongoDB'],
-    description: 'Built a real-time sentiment analysis system processing 10,000+ social media posts daily, providing actionable insights for brand reputation management and customer feedback analysis.',
-    challenge: 'Marketing teams struggled to monitor brand sentiment across multiple social platforms in real-time, missing critical customer feedback and potential PR crises. Manual analysis was time-consuming and inconsistent.',
-    methodology: 'Developed NLP pipeline using BERT-based transformer models for sentiment classification. Implemented streaming data ingestion with Apache Kafka, real-time processing with Flask backend, and interactive React dashboard. Applied aspect-based sentiment analysis to identify specific product features mentioned.',
-    outcomes: [
-    'Processed 10,000+ posts daily with 92% sentiment accuracy',
-    'Reduced response time to negative feedback from 24hrs to 2hrs',
-    'Identified 15 product improvement opportunities from user feedback',
-    'Automated 80% of manual sentiment monitoring tasks'],
-
-    metrics: [
-    { label: 'Daily Posts', value: '10K+', icon: 'ChatBubbleLeftRightIcon' },
-    { label: 'Accuracy', value: '92%', icon: 'CheckCircleIcon' },
-    { label: 'Response Time', value: '2hrs', icon: 'ClockIcon' },
-    { label: 'Automation', value: '80%', icon: 'BoltIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'NLTK', category: 'NLP Library' },
-    { name: 'BERT', category: 'Model' },
-    { name: 'Flask', category: 'Backend' },
-    { name: 'React', category: 'Frontend' },
-    { name: 'MongoDB', category: 'Database' }],
-
-    image: "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74",
-    alt: 'Modern analytics dashboard displaying real-time sentiment analysis with colorful pie charts and trend graphs on large monitor',
-    githubUrl: 'https://github.com/shreya/sentiment-analysis-dashboard',
-    liveUrl: 'https://sentiment-dashboard-demo.vercel.app',
-    duration: '3 months',
-    status: 'completed',
-    featured: true
+    title: "Netflix Data Analysis",
+    category: "Data Analytics",
+    description:
+      "Performed exploratory data analysis on Netflix titles to uncover trends in genres, content types, release patterns, and viewer preferences using interactive visualizations.",
+    tags: ["Python", "EDA", "Visualization"],
+    technologies: ["Python", "Pandas", "Matplotlib", "Seaborn"],
+    githubUrl: "https://github.com/shreya/netflix-analysis",
+    image: "https://images.unsplash.com/photo-1586899028174-e7098604235b",
+    alt: 'Climate scientist analyzing weather data on computer with multiple screens showing temperature maps and precipitation charts',
+    status: 'completed'
   },
+
   {
     id: 3,
-    title: 'Predictive Maintenance for Manufacturing',
-    category: 'IoT Analytics',
-    tags: ['Python', 'TensorFlow', 'Time Series', 'IoT'],
-    description: 'Designed predictive maintenance system using IoT sensor data and deep learning to forecast equipment failures 72 hours in advance, reducing unplanned downtime by 45% and maintenance costs by $1.8M.',
-    challenge: 'Manufacturing facility experienced frequent unexpected equipment failures causing production delays and costly emergency repairs. Traditional preventive maintenance schedules were inefficient and reactive.',
-    methodology: 'Implemented LSTM neural networks for time series analysis of sensor data (temperature, vibration, pressure). Created anomaly detection algorithms using autoencoders. Developed failure prediction models with 72-hour forecast window. Integrated real-time monitoring dashboard with alert system.',
-    outcomes: [
-    'Predicted failures 72 hours in advance with 87% accuracy',
-    'Reduced unplanned downtime by 45%',
-    'Decreased maintenance costs by $1.8M annually',
-    'Extended equipment lifespan by 18 months on average'],
-
-    metrics: [
-    { label: 'Prediction Window', value: '72hrs', icon: 'ClockIcon' },
-    { label: 'Accuracy', value: '87%', icon: 'ShieldCheckIcon' },
-    { label: 'Downtime Reduction', value: '45%', icon: 'ArrowTrendingDownIcon' },
-    { label: 'Cost Savings', value: '$1.8M', icon: 'CurrencyDollarIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'TensorFlow', category: 'Deep Learning' },
-    { name: 'LSTM', category: 'Algorithm' },
-    { name: 'Keras', category: 'Framework' },
-    { name: 'IoT Sensors', category: 'Hardware' }],
-
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_1b505a60e-1763644165085.png",
-    alt: 'Industrial manufacturing equipment with digital sensors and monitoring screens showing predictive maintenance analytics',
-    githubUrl: 'https://github.com/shreya/predictive-maintenance',
-    duration: '5 months',
-    status: 'completed',
-    featured: true
+    title: "Telecom Churn Data Analysis",
+    category: "Analytics",
+    description:
+      "Analyzed customer behavior and service usage data to identify churn drivers and business insights that improve retention strategies.",
+    tags: ["SQL", "Python", "EDA"],
+    technologies: ["Python", "SQL", "Power BI"],
+    githubUrl: "https://github.com/shreya/telecom-churn-analysis",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    alt: 'Climate scientist analyzing weather data on computer with multiple screens showing temperature maps and precipitation charts',
+    status: 'completed'
   },
+
   {
     id: 4,
-    title: 'Healthcare Data Analytics Platform',
-    category: 'Data Engineering',
-    tags: ['Python', 'SQL', 'ETL', 'Power BI', 'Azure'],
-    description: 'Architected comprehensive healthcare analytics platform processing 500K+ patient records, enabling data-driven clinical decisions and reducing diagnosis time by 30% through intelligent insights.',
-    challenge: 'Hospital network struggled with fragmented patient data across multiple systems, making it difficult to identify treatment patterns, track outcomes, and optimize resource allocation. Data quality issues and lack of standardization hindered analysis.',
-    methodology: 'Built robust ETL pipeline using Python and SQL to integrate data from 5 different hospital systems. Implemented data quality checks and standardization protocols. Created dimensional data warehouse with star schema. Developed interactive Power BI dashboards for clinical and operational insights.',
-    outcomes: [
-    'Integrated 500K+ patient records from 5 hospital systems',
-    'Reduced diagnosis time by 30% through pattern recognition',
-    'Improved data quality from 67% to 94% accuracy',
-    'Enabled real-time bed occupancy and resource optimization'],
+    title: "Movie Recommendation System",
+    category: "Machine Learning",
+    description:
+      "Implemented collaborative filtering and content-based recommendation models to suggest personalized movies based on user preferences.",
+    tags: ["Recommendation", "ML"],
+    technologies: ["Python", "Scikit-learn", "Cosine Similarity"],
+    githubUrl: "https://github.com/shreya/movie-recommender",
+    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba",
+    alt: "Loading",
+    status: 'completed'
 
-    metrics: [
-    { label: 'Patient Records', value: '500K+', icon: 'UserGroupIcon' },
-    { label: 'Data Quality', value: '94%', icon: 'CheckBadgeIcon' },
-    { label: 'Diagnosis Time', value: '-30%', icon: 'ClockIcon' },
-    { label: 'Systems Integrated', value: '5', icon: 'ServerIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'SQL', category: 'Database' },
-    { name: 'Azure', category: 'Cloud' },
-    { name: 'Power BI', category: 'Visualization' },
-    { name: 'ETL', category: 'Data Pipeline' }],
-
-    image: "https://images.unsplash.com/photo-1666886573531-48d2e3c2b684",
-    alt: 'Healthcare professional reviewing patient data analytics on tablet with medical charts and graphs in modern hospital setting',
-    githubUrl: 'https://github.com/shreya/healthcare-analytics',
-    duration: '6 months',
-    status: 'completed',
-    featured: false
   },
+
   {
     id: 5,
-    title: 'E-commerce Recommendation Engine',
-    category: 'Machine Learning',
-    tags: ['Python', 'Collaborative Filtering', 'Deep Learning', 'AWS'],
-    description: 'Developed personalized recommendation system using hybrid collaborative filtering and deep learning, increasing average order value by 28% and customer engagement by 42%.',
-    challenge: 'E-commerce platform had generic product recommendations leading to low conversion rates and poor customer engagement. Existing rule-based system failed to capture complex user preferences and behavior patterns.',
-    methodology: 'Implemented hybrid recommendation system combining collaborative filtering (user-user and item-item) with content-based filtering. Used neural collaborative filtering with embeddings for deep learning approach. Applied A/B testing framework to validate improvements. Deployed on AWS with real-time inference capabilities.',
-    outcomes: [
-    'Increased average order value by 28%',
-    'Improved click-through rate by 42%',
-    'Achieved 0.89 precision@10 for recommendations',
-    'Reduced cart abandonment rate by 19%'],
-
-    metrics: [
-    { label: 'Order Value', value: '+28%', icon: 'ArrowTrendingUpIcon' },
-    { label: 'Engagement', value: '+42%', icon: 'CursorArrowRaysIcon' },
-    { label: 'Precision@10', value: '0.89', icon: 'TargetIcon' },
-    { label: 'Cart Abandonment', value: '-19%', icon: 'ShoppingCartIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'TensorFlow', category: 'Framework' },
-    { name: 'Collaborative Filtering', category: 'Algorithm' },
-    { name: 'AWS', category: 'Cloud' },
-    { name: 'Redis', category: 'Caching' }],
-
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_116b592ab-1763644166575.png",
-    alt: 'Online shopping interface showing personalized product recommendations with colorful items and ratings on laptop screen',
-    githubUrl: 'https://github.com/shreya/recommendation-engine',
-    liveUrl: 'https://recommendation-demo.herokuapp.com',
-    duration: '4 months',
-    status: 'completed',
-    featured: false
+    title: "Resume Skill Matcher",
+    category: "NLP",
+    description:
+      "Developed an NLP system that matches resumes to job descriptions by extracting skills and computing similarity scores to automate candidate screening.",
+    tags: ["NLP", "Text Processing"],
+    technologies: ["Python", "TF-IDF", "Cosine Similarity", "Flask"],
+    githubUrl: "https://github.com/shreya/resume-skill-matcher",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
+    alt: "Loading",
+    status: 'completed'
   },
+
   {
     id: 6,
-    title: 'Financial Fraud Detection System',
-    category: 'Machine Learning',
-    tags: ['Python', 'Anomaly Detection', 'Real-time Processing', 'Kafka'],
-    description: 'Built real-time fraud detection system processing 1M+ transactions daily with 95% accuracy, preventing $4.2M in fraudulent transactions while maintaining low false positive rate.',
-    challenge: 'Financial institution faced increasing sophisticated fraud attempts with traditional rule-based systems generating excessive false positives (12% rate) and missing emerging fraud patterns. Real-time detection was critical for transaction approval.',
-    methodology: 'Developed ensemble model combining isolation forest for anomaly detection, XGBoost for classification, and LSTM for sequential pattern recognition. Implemented streaming architecture with Apache Kafka for real-time processing. Created adaptive learning system to detect new fraud patterns. Applied SHAP for model explainability.',
-    outcomes: [
-    'Achieved 95% fraud detection accuracy',
-    'Reduced false positive rate from 12% to 2.3%',
-    'Prevented $4.2M in fraudulent transactions',
-    'Processing latency under 100ms for real-time decisions'],
-
-    metrics: [
-    { label: 'Accuracy', value: '95%', icon: 'ShieldCheckIcon' },
-    { label: 'False Positives', value: '2.3%', icon: 'ExclamationTriangleIcon' },
-    { label: 'Fraud Prevented', value: '$4.2M', icon: 'BanknotesIcon' },
-    { label: 'Latency', value: '<100ms', icon: 'BoltIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'XGBoost', category: 'Algorithm' },
-    { name: 'Kafka', category: 'Streaming' },
-    { name: 'LSTM', category: 'Deep Learning' },
-    { name: 'SHAP', category: 'Explainability' }],
-
-    image: "https://images.unsplash.com/photo-1654588836190-d8e6c12122f8",
-    alt: 'Financial security concept with digital lock icon overlaying credit card and transaction data on dark background',
-    githubUrl: 'https://github.com/shreya/fraud-detection',
-    duration: '5 months',
-    status: 'completed',
-    featured: false
+    title: "Healthify Clone",
+    category: "Full Stack",
+    description:
+      "Built a health tracking web app to monitor diet, calories, and workouts with personalized insights and progress visualization.",
+    tags: ["React", "Full Stack"],
+    technologies: ["React", "Node.js", "MongoDB"],
+    githubUrl: "https://github.com/shreya/healthify-clone",
+    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438",
+    alt: "Loading",
+    status: 'completed'
   },
+
   {
     id: 7,
-    title: 'Supply Chain Optimization Model',
-    category: 'Operations Research',
-    tags: ['Python', 'Optimization', 'Linear Programming', 'Tableau'],
-    description: 'Developed optimization model for supply chain network reducing logistics costs by 22% and improving delivery times by 18% through intelligent route planning and inventory management.',
-    challenge: 'Logistics company struggled with inefficient route planning, suboptimal warehouse locations, and excess inventory costs. Manual planning processes could not handle complexity of multi-modal transportation and dynamic demand patterns.',
-    methodology: 'Applied linear programming and mixed-integer optimization using PuLP library. Developed demand forecasting models using ARIMA and Prophet. Created network flow optimization for route planning. Implemented inventory optimization using EOQ and safety stock calculations. Built Tableau dashboards for scenario analysis.',
-    outcomes: [
-    'Reduced logistics costs by 22% ($3.1M annually)',
-    'Improved on-time delivery from 78% to 96%',
-    'Decreased inventory holding costs by 15%',
-    'Optimized warehouse network reducing facilities from 12 to 8'],
-
-    metrics: [
-    { label: 'Cost Reduction', value: '22%', icon: 'ArrowTrendingDownIcon' },
-    { label: 'On-time Delivery', value: '96%', icon: 'TruckIcon' },
-    { label: 'Inventory Savings', value: '15%', icon: 'CubeIcon' },
-    { label: 'Annual Savings', value: '$3.1M', icon: 'CurrencyDollarIcon' }],
-
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'PuLP', category: 'Optimization' },
-    { name: 'Linear Programming', category: 'Algorithm' },
-    { name: 'Tableau', category: 'Visualization' },
-    { name: 'Prophet', category: 'Forecasting' }],
-
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_12a82bc61-1763644164749.png",
-    alt: 'Warehouse logistics operation with workers managing inventory and digital supply chain network overlay showing optimization routes',
-    githubUrl: 'https://github.com/shreya/supply-chain-optimization',
-    duration: '4 months',
-    status: 'completed',
-    featured: false
+    title: "Structural Defect Analyser",
+    category: "Computer Vision",
+    description:
+      "Used computer vision techniques to detect cracks and structural defects from images for automated infrastructure inspection.",
+    tags: ["CV", "Deep Learning"],
+    technologies: ["TensorFlow", "OpenCV", "CNN"],
+    githubUrl: "https://github.com/shreya/structural-defect-analyser",
+    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+    alt: "Loading",
+    status: 'completed'
   },
+
   {
     id: 8,
-    title: 'Climate Data Analysis Platform',
-    category: 'Data Science',
-    tags: ['Python', 'Time Series', 'Geospatial', 'Visualization'],
-    description: 'Created comprehensive climate data analysis platform processing 20 years of meteorological data, identifying temperature trends and precipitation patterns with interactive geospatial visualizations.',
-    challenge: 'Environmental research team needed to analyze vast amounts of historical climate data from multiple sources to identify long-term trends, seasonal patterns, and regional variations. Data was fragmented across different formats and required complex statistical analysis.',
-    methodology: 'Aggregated data from NOAA, NASA, and regional weather stations. Applied time series decomposition, trend analysis using Mann-Kendall test, and seasonal pattern detection. Implemented geospatial analysis using GeoPandas and Folium. Created interactive visualizations with Plotly and Dash for exploratory analysis.',
-    outcomes: [
-    'Analyzed 20 years of climate data from 500+ stations',
-    'Identified 1.2°C temperature increase trend over study period',
-    'Detected 15% increase in extreme weather events',
-    'Published findings in 3 peer-reviewed journals'],
+    title: "RAG Chatbot",
+    category: "Generative AI",
+    description:
+      "Built a Retrieval-Augmented Generation chatbot that answers questions using custom documents with vector search and LLMs.",
+    tags: ["LLM", "RAG"],
+    technologies: ["LangChain", "FAISS", "OpenAI API", "Python"],
+    githubUrl: "https://github.com/shreya/rag-chatbot",
+    liveUrl: "https://rag-chatbot-demo.vercel.app",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    alt: "Loading",
+    status: 'completed'
+  },
 
-    metrics: [
-    { label: 'Data Points', value: '50M+', icon: 'ChartBarIcon' },
-    { label: 'Weather Stations', value: '500+', icon: 'MapPinIcon' },
-    { label: 'Study Period', value: '20 years', icon: 'CalendarIcon' },
-    { label: 'Publications', value: '3', icon: 'DocumentTextIcon' }],
+  {
+    id: 9,
+    title: "Generative AI Test Data Synthesis",
+    category: "Generative AI",
+    description:
+      "Generated realistic synthetic datasets using generative models to preserve privacy while maintaining statistical similarity to real-world data.",
+    tags: ["GAN", "Synthetic Data"],
+    technologies: ["Python", "GANs", "TensorFlow"],
+    githubUrl: "https://github.com/shreya/test-data-synthesis",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+    alt: "Loading",
+    status: 'completed'
+  },
 
-    technologies: [
-    { name: 'Python', category: 'Language' },
-    { name: 'Pandas', category: 'Data Processing' },
-    { name: 'GeoPandas', category: 'Geospatial' },
-    { name: 'Plotly', category: 'Visualization' },
-    { name: 'Dash', category: 'Dashboard' }],
+  {
+    id: 10,
+    title: "AI Hallucination Detector",
+    category: "LLM Evaluation",
+    description:
+      "Designed a system to detect hallucinations in LLM outputs by validating responses against factual references and confidence scoring.",
+    tags: ["LLM", "Evaluation"],
+    technologies: ["Python", "LLMs", "Streamlit"],
+    githubUrl: "https://github.com/shreya/ai-hallucination-detector",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995",
+    alt: "Loading",
+    status: 'completed'
+  },
 
-    image: "https://img.rocket.new/generatedImages/rocket_gen_img_16f03e2f3-1763644165994.png",
-    alt: 'Climate scientist analyzing weather data on computer with multiple screens showing temperature maps and precipitation charts',
-    githubUrl: 'https://github.com/shreya/climate-data-analysis',
-    liveUrl: 'https://climate-analysis-demo.streamlit.app',
-    duration: '6 months',
-    status: 'in-progress',
-    featured: false
-  }];
-
-
+  {
+    id: 11,
+    title: "AI Symptom Checker",
+    category: "Healthcare AI",
+    description:
+      "Built an AI-powered medical assistant that predicts possible diseases from symptoms and suggests preventive measures, diet, and workouts.",
+    tags: ["Healthcare", "ML"],
+    technologies: ["Django", "ML Models", "Python"],
+    githubUrl: "https://github.com/shreya/ai-symptom-checker",
+    image: "https://images.unsplash.com/photo-1588776814546-ec7e7d78a0b5",
+    alt: "Loading",
+    status: 'completed'
+  }
+];
   const categories = ['All', 'Machine Learning', 'NLP', 'IoT Analytics', 'Data Engineering', 'Operations Research', 'Data Science'];
 
   const allTags = Array.from(new Set(projects.flatMap((p) => p.tags))).sort();

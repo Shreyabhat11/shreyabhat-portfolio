@@ -4,36 +4,7 @@ import { useEffect } from 'react';
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
-interface Technology {
-  name: string;
-  category: string;
-}
-
-interface Metric {
-  label: string;
-  value: string;
-  icon: string;
-}
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  tags: string[];
-  description: string;
-  challenge: string;
-  methodology: string;
-  outcomes: string[];
-  metrics: Metric[];
-  technologies: Technology[];
-  image: string;
-  alt: string;
-  githubUrl: string;
-  liveUrl?: string;
-  duration: string;
-  status: 'completed' | 'in-progress';
-  featured: boolean;
-}
+import type { Project } from '@/type/project';
 
 interface ProjectModalProps {
   project: Project;
@@ -72,14 +43,6 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
 
   if (!isOpen) return null;
 
-  const groupedTechnologies = project.technologies.reduce((acc, tech) => {
-    if (!acc[tech.category]) {
-      acc[tech.category] = [];
-    }
-    acc[tech.category].push(tech.name);
-    return acc;
-  }, {} as Record<string, string[]>);
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
       <div
@@ -100,20 +63,19 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
         <div className="relative h-80 overflow-hidden">
           <AppImage
             src={project.image}
-            alt={project.alt}
+            alt={project.alt ?? project.title}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-          
+
           <div className="absolute bottom-6 left-6 right-6 text-white">
             <div className="flex items-center space-x-3 mb-3">
               <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold">
                 {project.category}
               </span>
-              <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                project.status === 'completed'
-                  ? 'bg-trust text-white' :'bg-warning text-white'
-              }`}>
+              <span className={`px-3 py-1 rounded-full text-sm font-semibold ${project.status === 'completed'
+                  ? 'bg-trust text-white' : 'bg-warning text-white'
+                }`}>
                 {project.status === 'completed' ? 'Completed' : 'In Progress'}
               </span>
               {project.featured && (
@@ -131,7 +93,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
               </span>
               <span className="flex items-center space-x-1">
                 <Icon name="CodeBracketIcon" size={16} />
-                <span>{project.technologies.length} Technologies</span>
+                <span>{project.technologies?.length} Technologies</span>
               </span>
             </div>
           </div>
@@ -145,7 +107,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {project.metrics.map(metric => (
+            {project.metrics?.map(metric => (
               <div key={metric.label} className="bg-card rounded-lg p-4 text-center shadow-subtle">
                 <div className="inline-flex items-center justify-center w-10 h-10 bg-primary/10 rounded-full mb-2">
                   <Icon name={metric.icon as any} size={20} className="text-primary" />
@@ -183,7 +145,7 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 <span>Key Outcomes</span>
               </h3>
               <ul className="space-y-3">
-                {project.outcomes.map((outcome, index) => (
+                {project.outcomes?.map((outcome, index) => (
                   <li key={index} className="flex items-start space-x-3 bg-card p-4 rounded-lg">
                     <div className="flex-shrink-0 w-6 h-6 bg-trust/10 rounded-full flex items-center justify-center mt-0.5">
                       <Icon name="CheckIcon" size={14} className="text-trust" />
@@ -199,23 +161,19 @@ const ProjectModal = ({ project, isOpen, onClose }: ProjectModalProps) => {
                 <Icon name="WrenchScrewdriverIcon" size={20} className="text-primary" />
                 <span>Technology Stack</span>
               </h3>
-              <div className="space-y-4">
-                {Object.entries(groupedTechnologies).map(([category, techs]) => (
-                  <div key={category} className="bg-card p-4 rounded-lg">
-                    <h4 className="text-sm font-semibold text-text-primary mb-2">{category}</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {techs.map(tech => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-muted text-text-secondary text-sm rounded-md"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+              <div className="bg-card p-4 rounded-lg">
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies?.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-muted text-text-secondary text-sm rounded-md"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
+
             </div>
 
             <div>

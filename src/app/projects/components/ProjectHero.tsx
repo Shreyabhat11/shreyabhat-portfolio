@@ -33,18 +33,6 @@ const ProjectHero = ({ totalProjects, featuredCount }: ProjectHeroProps) => {
               <div className="text-4xl font-bold text-white">{totalProjects}</div>
               <div className="text-white/80 text-sm mt-1">Total Projects</div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white">{featuredCount}</div>
-              <div className="text-white/80 text-sm mt-1">Featured Works</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white">$12M+</div>
-              <div className="text-white/80 text-sm mt-1">Business Impact</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-white">90%+</div>
-              <div className="text-white/80 text-sm mt-1">Avg Accuracy</div>
-            </div>
           </div>
         </div>
       </div>

@@ -3,36 +3,7 @@
 import AppImage from '@/components/ui/AppImage';
 import Icon from '@/components/ui/AppIcon';
 
-interface Technology {
-  name: string;
-  category: string;
-}
-
-interface Metric {
-  label: string;
-  value: string;
-  icon: string;
-}
-
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  tags: string[];
-  description: string;
-  challenge: string;
-  methodology: string;
-  outcomes: string[];
-  metrics: Metric[];
-  technologies: Technology[];
-  image: string;
-  alt: string;
-  githubUrl: string;
-  liveUrl?: string;
-  duration: string;
-  status: 'completed' | 'in-progress';
-  featured: boolean;
-}
+import type { Project } from '@/type/project';
 
 interface ProjectCardProps {
   project: Project;
@@ -48,7 +19,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       <div className="relative h-48 overflow-hidden">
         <AppImage
           src={project.image}
-          alt={project.alt}
+          alt={project.alt ?? project.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -134,7 +105,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         </div>
 
         <div className="grid grid-cols-2 gap-3 pt-4 border-t border-border">
-          {project.metrics.slice(0, 2).map(metric => (
+          {project.metrics?.slice(0, 2).map(metric => (
             <div key={metric.label} className="text-center">
               <div className="text-lg font-bold text-primary">{metric.value}</div>
               <div className="text-xs text-text-secondary">{metric.label}</div>
