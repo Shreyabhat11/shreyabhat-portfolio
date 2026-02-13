@@ -158,25 +158,6 @@ const mockSkills: Skill[] = [
       'Plotly',
       'Dashboards'
     ]
-  },
-
-  {
-    id: 8,
-    name: 'Algorithmic Trading Systems',
-    category: 'Specialized Systems',
-    proficiency: 80,
-    yearsOfExperience: 1.5,
-    icon: 'BoltIcon',
-    description:
-      'Low-latency trading bots, data-driven strategies and execution optimization.',
-    projects: 4,
-    technologies: [
-      'Backtesting',
-      'Pandas',
-      'Real-time Data',
-      'Strategy Design',
-      'Execution Logic'
-    ]
   }
 ];
 
