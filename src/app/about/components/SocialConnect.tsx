@@ -18,7 +18,7 @@ export default function SocialConnect() {
   const socialLinks: SocialLink[] = [
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/shreya-bhat-3169b1248/',
+      url: 'https://www.linkedin.com/in/shreyabhat11/',
       icon: 'UserGroupIcon',
       description: 'Connect professionally',
       color: 'hover:bg-[#0077B5] hover:text-white'
@@ -47,7 +47,7 @@ export default function SocialConnect() {
   ];
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('shreyabhat224@gmail.com');
+    navigator.clipboard.writeText('shreyabhat545@gmail.com');
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
   };
@@ -130,7 +130,7 @@ export default function SocialConnect() {
                 <div className="flex items-center space-x-3 mb-4">
                   <input
                     type="text"
-                    value="shreyabhat224@gmail.com"
+                    value="shreyabhat545@gmail.com"
                     readOnly
                     className="flex-1 px-4 py-3 bg-muted rounded-lg text-text-primary font-medium"
                   />

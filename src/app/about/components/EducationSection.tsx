@@ -9,9 +9,8 @@ interface Education {
   duration: string;
   cgpa: string;
   highlights: string[];
-  image: string;
-  alt: string;
 }
+
 
 interface Certification {
   title: string;
@@ -22,59 +21,58 @@ interface Certification {
 
 export default function EducationSection() {
   const education: Education[] = [
-  {
-    degree: 'Bachelor of Engineering',
-    institution: 'Premier Engineering College',
-    duration: '2018 - 2023',
-    cgpa: '8.5/10',
-    highlights: [
-    'Specialized in Data Structures and Algorithms',
-    'Completed advanced coursework in Machine Learning',
-    'Led technical projects in data analysis and visualization',
-    'Active member of coding and analytics clubs'],
+    {
+      degree: 'B.E. Electronics & Instrumentation Engineering',
+      institution: 'Visvesvaraya Technological University (VTU)',
+      duration: '2020 – 2024',
+      cgpa: '8.5/10',
+      highlights: [
+        'Strong foundation in sensors, PLCs, control systems, and industrial automation',
+        'Hands-on experience with SCADA & Building Management Systems (BMS)',
+        'Applied data analysis for process monitoring and troubleshooting',
+        'Built mini-projects combining Python, SQL, and engineering datasets'
+      ]
+    }];
 
-    image: "https://images.unsplash.com/photo-1604306748004-5ebc73dd331f",
-    alt: 'Modern university campus building with glass facade and students walking on pathway with green lawns'
-  }];
 
 
   const certifications: Certification[] = [
-  {
-    title: 'Machine Learning Specialization',
-    provider: 'Coursera - Stanford University',
-    year: '2022',
-    icon: 'CpuChipIcon'
-  },
-  {
-    title: 'Data Science Professional Certificate',
-    provider: 'IBM',
-    year: '2022',
-    icon: 'ChartBarIcon'
-  },
-  {
-    title: 'Python for Data Science',
-    provider: 'DataCamp',
-    year: '2021',
-    icon: 'CodeBracketIcon'
-  },
-  {
-    title: 'Deep Learning Specialization',
-    provider: 'Coursera - deeplearning.ai',
-    year: '2023',
-    icon: 'CircleStackIcon'
-  },
-  {
-    title: 'SQL for Data Analysis',
-    provider: 'Udacity',
-    year: '2021',
-    icon: 'TableCellsIcon'
-  },
-  {
-    title: 'Advanced Statistics',
-    provider: 'MIT OpenCourseWare',
-    year: '2022',
-    icon: 'CalculatorIcon'
-  }];
+    {
+      title: 'Machine Learning Specialization',
+      provider: 'Coursera - Stanford University',
+      year: '2022',
+      icon: 'CpuChipIcon'
+    },
+    {
+      title: 'Data Science Professional Certificate',
+      provider: 'IBM',
+      year: '2022',
+      icon: 'ChartBarIcon'
+    },
+    {
+      title: 'Python for Data Science',
+      provider: 'DataCamp',
+      year: '2021',
+      icon: 'CodeBracketIcon'
+    },
+    {
+      title: 'Deep Learning Specialization',
+      provider: 'Coursera - deeplearning.ai',
+      year: '2023',
+      icon: 'CircleStackIcon'
+    },
+    {
+      title: 'SQL for Data Analysis',
+      provider: 'Udacity',
+      year: '2021',
+      icon: 'TableCellsIcon'
+    },
+    {
+      title: 'Advanced Statistics',
+      provider: 'MIT OpenCourseWare',
+      year: '2022',
+      icon: 'CalculatorIcon'
+    }];
 
 
   return (
@@ -95,59 +93,45 @@ export default function EducationSection() {
 
         <div className="mb-16">
           {education.map((edu, index) =>
-          <div
-            key={index}
-            className="bg-card rounded-2xl shadow-elevated overflow-hidden">
+            <div
+              key={index}
+              className="bg-card rounded-2xl shadow-elevated overflow-hidden">
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative h-64 lg:h-auto">
-                  <AppImage
-                  src={edu.image}
-                  alt={edu.alt}
-                  className="w-full h-full object-cover" />
+              <div className="bg-card rounded-2xl shadow-elevated p-8 sm:p-12">
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent lg:bg-gradient-to-r"></div>
-                  <div className="absolute bottom-6 left-6 lg:hidden">
-                    <div className="inline-flex items-center space-x-2 px-4 py-2 bg-trust text-white rounded-lg">
-                      <Icon name="TrophyIcon" size={20} />
-                      <span className="font-semibold">CGPA {edu.cgpa}</span>
-                    </div>
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-lg text-text-secondary mb-1">{edu.institution}</p>
+                    <p className="text-sm text-text-tertiary">{edu.duration}</p>
+                  </div>
+
+                  <div className="inline-flex items-center space-x-2 px-4 py-2 bg-trust text-white rounded-lg">
+                    <Icon name="TrophyIcon" size={20} />
+                    <span className="font-semibold">CGPA {edu.cgpa}</span>
                   </div>
                 </div>
 
-                <div className="p-8 sm:p-12">
-                  <div className="flex items-start justify-between mb-6">
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">
-                        {edu.degree}
-                      </h3>
-                      <p className="text-lg text-text-secondary mb-1">{edu.institution}</p>
-                      <p className="text-sm text-text-tertiary">{edu.duration}</p>
-                    </div>
-                    <div className="hidden lg:block">
-                      <div className="inline-flex items-center space-x-2 px-4 py-2 bg-trust text-white rounded-lg">
-                        <Icon name="TrophyIcon" size={20} />
-                        <span className="font-semibold">CGPA {edu.cgpa}</span>
-                      </div>
-                    </div>
-                  </div>
+                <div className="space-y-3">
+                  <h4 className="text-lg font-semibold text-text-primary flex items-center space-x-2">
+                    <Icon name="StarIcon" size={20} className="text-accent" />
+                    <span>Key Highlights</span>
+                  </h4>
 
-                  <div className="space-y-3">
-                    <h4 className="text-lg font-semibold text-text-primary flex items-center space-x-2">
-                      <Icon name="StarIcon" size={20} className="text-accent" />
-                      <span>Key Highlights</span>
-                    </h4>
-                    <ul className="space-y-3">
-                      {edu.highlights.map((highlight, idx) =>
-                    <li key={idx} className="flex items-start space-x-3">
-                          <Icon name="CheckCircleIcon" size={20} className="text-trust flex-shrink-0 mt-0.5" />
-                          <span className="text-text-secondary">{highlight}</span>
-                        </li>
-                    )}
-                    </ul>
-                  </div>
+                  <ul className="space-y-3">
+                    {edu.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start space-x-3">
+                        <Icon name="CheckCircleIcon" size={20} className="text-trust flex-shrink-0 mt-0.5" />
+                        <span className="text-text-secondary">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
               </div>
+
             </div>
           )}
         </div>
@@ -158,9 +142,9 @@ export default function EducationSection() {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) =>
-            <div
-              key={index}
-              className="bg-card rounded-xl shadow-card p-6 hover:shadow-elevated transition-all duration-300 transform hover:-translate-y-1 group">
+              <div
+                key={index}
+                className="bg-card rounded-xl shadow-card p-6 hover:shadow-elevated transition-all duration-300 transform hover:-translate-y-1 group">
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">

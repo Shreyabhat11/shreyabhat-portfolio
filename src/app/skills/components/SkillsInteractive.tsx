@@ -13,222 +13,173 @@ interface Skill {
   category: string;
   proficiency: number;
   yearsOfExperience: number;
+
   icon: string;
   description: string;
+
   projects: number;
-  certifications: string[];
-  learningPath: string;
-  tools: string[];
-  achievements: string[];
-  resources: { title: string; url: string; type: string }[];
-  githubRepos: { name: string; url: string; stars: number }[];
+  technologies?: string[];
 }
+
 
 const mockSkills: Skill[] = [
   {
     id: 1,
     name: 'Python',
-    category: 'Programming Languages',
+    category: 'Programming',
     proficiency: 95,
     yearsOfExperience: 3.5,
     icon: 'CodeBracketIcon',
-    description: 'Advanced proficiency in Python for data science, machine learning, and automation. Extensive experience with NumPy, Pandas, Scikit-learn, and TensorFlow frameworks.',
-    projects: 15,
-    certifications: ['Python for Data Science - IBM', 'Advanced Python Programming - Coursera'],
-    learningPath: 'Self-taught → Professional Projects',
-    tools: ['NumPy', 'Pandas', 'Scikit-learn', 'TensorFlow', 'PyTorch', 'Matplotlib', 'Seaborn'],
-    achievements: [
-      'Developed 15+ production-ready data science projects',
-      'Optimized data processing pipelines reducing runtime by 60%',
-      'Contributed to open-source Python libraries'
-    ],
-    resources: [
-      { title: 'Python Data Science Handbook', url: 'https://github.com/jakevdp/PythonDataScienceHandbook', type: 'Book' },
-      { title: 'Real Python Tutorials', url: 'https://realpython.com', type: 'Tutorial' }
-    ],
-    githubRepos: [
-      { name: 'ml-algorithms-implementation', url: 'https://github.com/shreya/ml-algorithms', stars: 45 },
-      { name: 'data-analysis-toolkit', url: 'https://github.com/shreya/data-toolkit', stars: 32 }
+    description:
+      'Core language for data science, automation, ML pipelines and backend APIs.',
+    projects: 20,
+    technologies: [
+      'Pandas',
+      'NumPy',
+      'Scikit-learn',
+      'Matplotlib',
+      'FastAPI',
+      'Flask'
     ]
   },
+
   {
     id: 2,
     name: 'Machine Learning',
-    category: 'Data Science',
+    category: 'AI / Data Science',
     proficiency: 90,
     yearsOfExperience: 2.5,
     icon: 'CpuChipIcon',
-    description: 'Expert in supervised and unsupervised learning algorithms, model optimization, and deployment. Strong foundation in statistical analysis and predictive modeling.',
+    description:
+      'End-to-end ML systems: feature engineering, modeling, evaluation and deployment.',
     projects: 12,
-    certifications: ['Machine Learning Specialization - Stanford', 'Deep Learning Specialization - deeplearning.ai'],
-    learningPath: 'Academic → Industry Application',
-    tools: ['Scikit-learn', 'XGBoost', 'LightGBM', 'TensorFlow', 'Keras', 'MLflow'],
-    achievements: [
-      'Built predictive models with 92% accuracy for business forecasting',
-      'Implemented ensemble methods improving model performance by 25%',
-      'Deployed ML models serving 10,000+ daily predictions'
-    ],
-    resources: [
-      { title: 'Hands-On Machine Learning', url: 'https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/', type: 'Book' },
-      { title: 'ML Course by Andrew Ng', url: 'https://www.coursera.org/learn/machine-learning', type: 'Course' }
-    ],
-    githubRepos: [
-      { name: 'ml-model-deployment', url: 'https://github.com/shreya/ml-deployment', stars: 67 },
-      { name: 'ensemble-methods', url: 'https://github.com/shreya/ensemble-ml', stars: 28 }
+    technologies: [
+      'Regression',
+      'Classification',
+      'XGBoost',
+      'Random Forest',
+      'Model Deployment'
     ]
   },
+
   {
     id: 3,
     name: 'SQL & Databases',
-    category: 'Data Management',
-    proficiency: 88,
+    category: 'Data Engineering',
+    proficiency: 90,
     yearsOfExperience: 3,
     icon: 'CircleStackIcon',
-    description: 'Proficient in complex SQL queries, database design, optimization, and data warehousing. Experience with both relational and NoSQL databases.',
-    projects: 10,
-    certifications: ['SQL for Data Science - UC Davis', 'Database Management Systems - Coursera'],
-    learningPath: 'Academic → Professional Practice',
-    tools: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis', 'SQLite', 'BigQuery'],
-    achievements: [
-      'Optimized database queries reducing execution time by 70%',
-      'Designed scalable database schemas for enterprise applications',
-      'Managed databases handling 1M+ records efficiently'
-    ],
-    resources: [
-      { title: 'SQL Performance Explained', url: 'https://sql-performance-explained.com/', type: 'Book' },
-      { title: 'Mode SQL Tutorial', url: 'https://mode.com/sql-tutorial/', type: 'Tutorial' }
-    ],
-    githubRepos: [
-      { name: 'sql-optimization-toolkit', url: 'https://github.com/shreya/sql-toolkit', stars: 41 }
+    description:
+      'Complex queries, joins, optimization, schema design and analytics pipelines.',
+    projects: 15,
+    technologies: [
+      'PostgreSQL',
+      'MySQL',
+      'SQLite',
+      'Query Optimization',
+      'ETL'
     ]
   },
+
   {
     id: 4,
-    name: 'Data Visualization',
-    category: 'Analytics',
+    name: 'React & Frontend',
+    category: 'Full Stack',
     proficiency: 85,
     yearsOfExperience: 2,
-    icon: 'ChartBarIcon',
-    description: 'Creating compelling data stories through interactive dashboards and visualizations. Expert in translating complex data into actionable insights.',
-    projects: 18,
-    certifications: ['Data Visualization with Tableau - Coursera'],
-    learningPath: 'Self-taught → Client Projects',
-    tools: ['Tableau', 'Power BI', 'Matplotlib', 'Seaborn', 'Plotly', 'D3.js'],
-    achievements: [
-      'Created 50+ interactive dashboards for business intelligence',
-      'Reduced report generation time by 80% through automation',
-      'Presented data insights to C-level executives'
-    ],
-    resources: [
-      { title: 'Storytelling with Data', url: 'https://www.storytellingwithdata.com/', type: 'Book' },
-      { title: 'Tableau Public Gallery', url: 'https://public.tableau.com/gallery', type: 'Resource' }
-    ],
-    githubRepos: [
-      { name: 'visualization-templates', url: 'https://github.com/shreya/viz-templates', stars: 53 }
+    icon: 'Squares2X2Icon',
+    description:
+      'Modern UI development for dashboards, analytics apps and interactive systems.',
+    projects: 10,
+    technologies: [
+      'React',
+      'TypeScript',
+      'Tailwind',
+      'Next.js',
+      'Charts',
+      'UI/UX'
     ]
   },
+
   {
     id: 5,
-    name: 'Statistical Analysis',
-    category: 'Data Science',
-    proficiency: 87,
+    name: 'Backend APIs (Django/Flask)',
+    category: 'Full Stack',
+    proficiency: 88,
     yearsOfExperience: 2.5,
-    icon: 'CalculatorIcon',
-    description: 'Strong foundation in statistical methods, hypothesis testing, and experimental design. Applied statistics for data-driven decision making.',
-    projects: 8,
-    certifications: ['Statistics for Data Science - MIT', 'Bayesian Statistics - Duke University'],
-    learningPath: 'Academic Foundation → Research',
-    tools: ['R', 'Python (SciPy, StatsModels)', 'SPSS', 'Excel'],
-    achievements: [
-      'Conducted A/B tests improving conversion rates by 35%',
-      'Applied statistical methods for quality control in manufacturing',
-      'Published research paper on statistical modeling'
-    ],
-    resources: [
-      { title: 'Think Stats', url: 'https://greenteapress.com/thinkstats/', type: 'Book' },
-      { title: 'Statistics by Jim', url: 'https://statisticsbyjim.com/', type: 'Blog' }
-    ],
-    githubRepos: [
-      { name: 'statistical-tests-library', url: 'https://github.com/shreya/stats-lib', stars: 36 }
+    icon: 'ServerIcon',
+    description:
+      'REST APIs, authentication, database integration and ML model serving.',
+    projects: 11,
+    technologies: [
+      'Django',
+      'Flask',
+      'REST',
+      'JWT',
+      'PostgreSQL',
+      'Deployment'
     ]
   },
+
   {
     id: 6,
-    name: 'Deep Learning',
-    category: 'Artificial Intelligence',
-    proficiency: 82,
-    yearsOfExperience: 1.5,
-    icon: 'CpuChipIcon',
-    description: 'Building and training neural networks for computer vision and NLP tasks. Experience with CNN, RNN, and transformer architectures.',
-    projects: 7,
-    certifications: ['Deep Learning Specialization - deeplearning.ai', 'TensorFlow Developer Certificate'],
-    learningPath: 'Online Courses → Personal Projects',
-    tools: ['TensorFlow', 'PyTorch', 'Keras', 'OpenCV', 'Hugging Face'],
-    achievements: [
-      'Built image classification model with 94% accuracy',
-      'Implemented sentiment analysis system for customer feedback',
-      'Fine-tuned transformer models for domain-specific tasks'
-    ],
-    resources: [
-      { title: 'Deep Learning Book', url: 'https://www.deeplearningbook.org/', type: 'Book' },
-      { title: 'Fast.ai Course', url: 'https://www.fast.ai/', type: 'Course' }
-    ],
-    githubRepos: [
-      { name: 'cnn-architectures', url: 'https://github.com/shreya/cnn-models', stars: 58 },
-      { name: 'nlp-transformers', url: 'https://github.com/shreya/nlp-transformers', stars: 42 }
+    name: 'Industrial Automation & SCADA',
+    category: 'Engineering Systems',
+    proficiency: 85,
+    yearsOfExperience: 2,
+    icon: 'CogIcon',
+    description:
+      'Instrumentation, BMS/SCADA systems, process monitoring and industrial data integration.',
+    projects: 6,
+    technologies: [
+      'SCADA',
+      'BMS',
+      'PLC',
+      'Sensors',
+      'Control Systems',
+      'Monitoring'
     ]
   },
+
   {
     id: 7,
-    name: 'Big Data Technologies',
-    category: 'Data Engineering',
-    proficiency: 75,
-    yearsOfExperience: 1,
-    icon: 'ServerIcon',
-    description: 'Working with distributed computing frameworks for processing large-scale datasets. Understanding of data pipeline architecture.',
-    projects: 5,
-    certifications: ['Big Data Specialization - UC San Diego'],
-    learningPath: 'Industry Training → Projects',
-    tools: ['Apache Spark', 'Hadoop', 'Kafka', 'Airflow', 'AWS EMR'],
-    achievements: [
-      'Processed 100GB+ datasets using Spark',
-      'Built ETL pipelines for real-time data processing',
-      'Optimized data workflows reducing processing time by 50%'
-    ],
-    resources: [
-      { title: 'Learning Spark', url: 'https://pages.databricks.com/rs/094-YMS-629/images/LearningSpark2.0.pdf', type: 'Book' },
-      { title: 'Spark Documentation', url: 'https://spark.apache.org/docs/latest/', type: 'Documentation' }
-    ],
-    githubRepos: [
-      { name: 'spark-etl-pipeline', url: 'https://github.com/shreya/spark-etl', stars: 29 }
+    name: 'Data Visualization & Analytics',
+    category: 'Analytics',
+    proficiency: 88,
+    yearsOfExperience: 2,
+    icon: 'ChartBarIcon',
+    description:
+      'Interactive dashboards and business insights for decision making.',
+    projects: 14,
+    technologies: [
+      'Power BI',
+      'Matplotlib',
+      'Seaborn',
+      'Plotly',
+      'Dashboards'
     ]
   },
+
   {
     id: 8,
-    name: 'Cloud Computing',
-    category: 'Infrastructure',
-    proficiency: 78,
+    name: 'Algorithmic Trading Systems',
+    category: 'Specialized Systems',
+    proficiency: 80,
     yearsOfExperience: 1.5,
-    icon: 'CloudIcon',
-    description: 'Deploying and managing data science solutions on cloud platforms. Experience with serverless architectures and containerization.',
-    projects: 9,
-    certifications: ['AWS Certified Cloud Practitioner', 'Google Cloud Associate'],
-    learningPath: 'Certification → Hands-on Practice',
-    tools: ['AWS', 'Google Cloud', 'Azure', 'Docker', 'Kubernetes'],
-    achievements: [
-      'Deployed ML models on AWS SageMaker',
-      'Managed cloud infrastructure reducing costs by 40%',
-      'Implemented CI/CD pipelines for automated deployments'
-    ],
-    resources: [
-      { title: 'AWS Documentation', url: 'https://docs.aws.amazon.com/', type: 'Documentation' },
-      { title: 'Cloud Academy', url: 'https://cloudacademy.com/', type: 'Platform' }
-    ],
-    githubRepos: [
-      { name: 'cloud-ml-deployment', url: 'https://github.com/shreya/cloud-ml', stars: 38 }
+    icon: 'BoltIcon',
+    description:
+      'Low-latency trading bots, data-driven strategies and execution optimization.',
+    projects: 4,
+    technologies: [
+      'Backtesting',
+      'Pandas',
+      'Real-time Data',
+      'Strategy Design',
+      'Execution Logic'
     ]
   }
 ];
+
 
 export default function SkillsInteractive() {
   const [isHydrated, setIsHydrated] = useState(false);

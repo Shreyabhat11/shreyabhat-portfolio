@@ -3,7 +3,6 @@ import Header from '@/components/common/Header';
 import ExperienceTimeline from './components/ExperienceTimeline';
 import CareerStats from './components/CareerStats';
 import SkillProgression from './components/SkillProgression';
-import Testimonials from './components/Testimonials';
 import Icon from '@/components/ui/AppIcon';
 import Link from 'next/link';
 
@@ -54,10 +53,6 @@ export default function ExperiencePage() {
             <SkillProgression />
           </div>
 
-          <div className="mb-16">
-            <Testimonials />
-          </div>
-
           <div className="bg-gradient-to-br from-primary to-accent rounded-2xl p-8 md:p-12 text-center shadow-elevated">
             
             <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
@@ -72,7 +67,7 @@ export default function ExperiencePage() {
                 View My Projects
               </Link>
               <a
-                href="https://linkedin.com/in/shreya"
+                href="https://www.linkedin.com/in/shreyabhat11/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/10 text-white rounded-lg font-semibold hover:bg-white/20 transition-all duration-250 focus-ring backdrop-blur-sm"
@@ -93,7 +88,7 @@ export default function ExperiencePage() {
             </p>
             <div className="flex items-center gap-6">
               <a
-                href="https://github.com/shreya"
+                href="https://github.com/Shreyabhat11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary hover:text-text-primary transition-colors duration-250"
@@ -102,7 +97,7 @@ export default function ExperiencePage() {
                 <Icon name="CodeBracketIcon" size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/shreya"
+                href="https://www.linkedin.com/in/shreyabhat11/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary hover:text-text-primary transition-colors duration-250"

@@ -61,11 +61,11 @@ export default function ResumeInteractive() {
 
   const personalInfo = {
     name: "Shreya Bhat",
-    title: "Python | SQL | Machine Learning | Data Science Learner",
+    title: "Data Scientist | Machine Learning & GenAI | Python • SQL • AI Solutions | Ex-Cipla",
     email: "shreyabhat545@gmail.com",
     phone: "+91 9380040180",
     location: "Bangalore, Karnataka, India",
-    linkedin: "https://www.linkedin.com/in/shreya-bhat-3169b1248/",
+    linkedin: "https://www.linkedin.com/in/shreyabhat11/",
     github: "https://github.com/Shreyabhat11",
     portfolio: "https://shreya-portfolio.com",
   };

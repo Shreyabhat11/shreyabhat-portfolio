@@ -112,7 +112,7 @@ const Footer = () => {
                 <Icon name="UserGroupIcon" size={20} />
               </a>
               <a
-                href="mailto:shreyabhat224@gmail.com"
+                href="mailto:shreyabhat545@gmail.com"
                 className="p-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all duration-250 focus-ring"
                 aria-label="Email Contact"
               >
@@ -120,7 +120,7 @@ const Footer = () => {
               </a>
             </div>
             <p className="text-sm text-white/70 mt-4">
-              shreyabhat224@gmail.com
+              shreyabhat545@gmail.com
             </p>
           </div>
         </div>

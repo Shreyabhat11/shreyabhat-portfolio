@@ -6,7 +6,6 @@ interface Skill {
   category: string;
   proficiency: number;
   yearsOfExperience: number;
-  learningPath: string;
 }
 
 interface LearningTimelineProps {
@@ -17,35 +16,49 @@ export default function LearningTimeline({ skills }: LearningTimelineProps) {
   const sortedSkills = [...skills].sort((a, b) => b.yearsOfExperience - a.yearsOfExperience);
 
   const timelineEvents = [
+    
     {
-      year: '2021',
-      title: 'Engineering Foundation',
-      description: 'Started engineering degree with focus on programming fundamentals and mathematical foundations',
-      skills: ['Python Basics', 'SQL', 'Statistics'],
-      icon: 'AcademicCapIcon'
-    },
-    {
-      year: '2022',
-      title: 'Data Science Transition',
-      description: 'Began specializing in data science through online courses and personal projects',
-      skills: ['Machine Learning', 'Data Visualization', 'Python Advanced'],
-      icon: 'ChartBarIcon'
-    },
-    {
-      year: '2023',
-      title: 'Professional Experience',
-      description: 'Joined CIPLA Ltd as Data Science professional, working on real-world analytics projects',
-      skills: ['Deep Learning', 'Big Data', 'Cloud Computing'],
-      icon: 'BriefcaseIcon'
-    },
-    {
-      year: '2024',
-      title: 'Advanced Specialization',
-      description: 'Deepening expertise in ML/AI and expanding into cloud-based solutions',
-      skills: ['Advanced ML', 'MLOps', 'Cloud Architecture'],
-      icon: 'CpuChipIcon'
-    }
-  ];
+    year: '2020–2024',
+    title: 'Electronics & Instrumentation Engineering',
+    description:
+      'Built strong foundations in sensors, control systems, PLCs, and process automation. Developed analytical thinking and problem-solving skills through core engineering projects and labs.',
+    skills: ['PLC', 'Sensors', 'Control Systems', 'Instrumentation'],
+    icon: 'CogIcon'
+  },
+  {
+    year: '2024',
+    title: 'CIPLA – Engineering Trainee (Instrumentation)',
+    description:
+      'Worked on BMS and SCADA systems, monitoring plant operations, troubleshooting instrumentation, and improving system reliability using real-time operational data.',
+    skills: ['SCADA', 'BMS', 'Process Monitoring', 'System Analytics'],
+    icon: 'BriefcaseIcon'
+  },
+  {
+    year: '2024',
+    title: 'Data & Analytics Exposure',
+    description:
+      'Started analyzing operational data using Excel and Python to identify patterns, automate reports, and support faster decision-making in maintenance and troubleshooting.',
+    skills: ['Python', 'SQL', 'Automation Scripts', 'Data Analysis'],
+    icon: 'CodeBracketIcon'
+  },
+  {
+    year: '2025',
+    title: 'Transition to Data Science & ML',
+    description:
+      'Focused on SQL, statistics, machine learning, and end-to-end data projects. Built predictive models and dashboards while developing a strong foundation in practical data science.',
+    skills: ['Machine Learning', 'Pandas', 'Scikit-learn', 'Visualization'],
+    icon: 'ChartBarIcon'
+  },
+  {
+    year: '2025 (Ongoing)',
+    title: 'GenAI & Applied AI Projects',
+    description:
+      'Building AI-powered applications including disease diagnosis systems, smart assistants, and interactive web tools using React, Django, and modern ML/GenAI frameworks.',
+    skills: ['React', 'Django', 'Flask', 'REST APIs', 'ML Deployment', 'GenAI Frameworks'],
+    icon: 'Squares2X2Icon'
+  }
+];
+
 
   return (
     <div className="space-y-8">

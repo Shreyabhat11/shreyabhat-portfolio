@@ -2,101 +2,91 @@
 
 import Icon from '@/components/ui/AppIcon';
 
-interface Philosophy {
+interface Principle {
   title: string;
   description: string;
   icon: string;
 }
 
 export default function PhilosophySection() {
-  const philosophies: Philosophy[] = [
+  const principles: Principle[] = [
     {
-      title: 'Data-Driven Decision Making',
-      description: 'Every insight must be backed by rigorous analysis and statistical validation. I believe in letting data tell the story while maintaining critical thinking about what the numbers truly represent.',
-      icon: 'ChartBarIcon'
+      title: 'Solve Real Problems',
+      description:
+        'I focus on practical solutions that improve efficiency, reduce downtime, or support better decisions — not just impressive models that stay in notebooks.',
+      icon: 'WrenchScrewdriverIcon'
     },
     {
-      title: 'Continuous Learning',
-      description: 'The data science landscape evolves rapidly. I commit to staying current with emerging technologies, methodologies, and best practices through ongoing education and hands-on experimentation.',
-      icon: 'BookOpenIcon'
-    },
-    {
-      title: 'Engineering Precision',
-      description: 'My engineering background instills a methodical approach to problem-solving. I apply systematic thinking to break down complex challenges into manageable, solvable components.',
+      title: 'Engineering + Analytics',
+      description:
+        'My engineering background helps me understand systems, processes, and root causes. I combine this with Python, SQL, and ML to build reliable, production-ready data solutions.',
       icon: 'CogIcon'
     },
     {
-      title: 'Business Impact Focus',
-      description: 'Technical excellence means nothing without real-world application. I prioritize solutions that deliver measurable business value and align with organizational objectives.',
-      icon: 'PresentationChartLineIcon'
+      title: 'End-to-End Ownership',
+      description:
+        'From data collection and cleaning to dashboards and deployment, I handle complete pipelines instead of isolated analysis.',
+      icon: 'CircleStackIcon'
     },
     {
-      title: 'Collaborative Innovation',
-      description: 'The best solutions emerge from diverse perspectives. I value cross-functional collaboration and believe in sharing knowledge to elevate team capabilities.',
-      icon: 'UserGroupIcon'
-    },
-    {
-      title: 'Ethical Analytics',
-      description: 'With great data comes great responsibility. I advocate for transparent, unbiased analysis that respects privacy and considers the broader societal implications of data science work.',
-      icon: 'ShieldCheckIcon'
+      title: 'Continuous Growth',
+      description:
+        'I constantly learn new tools and frameworks while building real projects — web apps, ML models, and automation systems — to stay industry ready.',
+      icon: 'RocketLaunchIcon'
     }
   ];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-accent/5">
+    <section className="py-16 sm:py-20 lg:py-24 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-accent/10 rounded-full mb-4">
-            <Icon name="LightBulbIcon" size={20} className="text-accent" />
-            <span className="text-sm font-medium text-accent">Core Principles</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary mb-4">
-            Technical Philosophy
+
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-text-primary mb-4">
+            How I Work
           </h2>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            The guiding principles that shape my approach to data science and professional growth.
+          <p className="text-lg text-text-secondary max-w-2xl mx-auto">
+            My approach blends engineering discipline with modern data science to
+            deliver solutions that actually make an impact.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {philosophies.map((philosophy, index) => (
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+          {principles.map((item, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl shadow-card p-6 sm:p-8 hover:shadow-elevated transition-all duration-300 transform hover:-translate-y-2 group"
+              className="bg-card rounded-xl shadow-card p-6 hover:shadow-elevated transition-all duration-300"
             >
-              <div className="flex items-start space-x-4 mb-4">
-                <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Icon name={philosophy.icon as any} size={28} className="text-white" />
+              <div className="flex items-start gap-4">
+
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <Icon name={item.icon as any} size={22} className="text-primary" />
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-text-primary mb-2">
-                    {philosophy.title}
+
+                <div>
+                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                    {item.title}
                   </h3>
+                  <p className="text-text-secondary text-sm leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
+
               </div>
-              <p className="text-text-secondary leading-relaxed">
-                {philosophy.description}
-              </p>
             </div>
           ))}
+
         </div>
 
-        <div className="mt-12 lg:mt-16 bg-card rounded-2xl shadow-elevated p-8 sm:p-12">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="flex-shrink-0">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary via-accent to-trust flex items-center justify-center">
-                <Icon name="SparklesIcon" size={40} className="text-white" />
-              </div>
-            </div>
-            <div className="flex-1 text-center lg:text-left">
-              <h3 className="text-2xl font-bold text-text-primary mb-3">
-                Engineering Precision Meets Data Science Innovation
-              </h3>
-              <p className="text-lg text-text-secondary leading-relaxed">
-                My unique value proposition lies in bridging traditional engineering discipline with modern data science innovation. This combination enables me to approach complex problems with both analytical rigor and creative problem-solving, making me an ideal candidate for organizations seeking professionals who understand technical implementation and business impact.
-              </p>
-            </div>
-          </div>
+        {/* Bottom statement */}
+        <div className="mt-12 text-center text-text-secondary max-w-3xl mx-auto">
+          <p>
+            My goal is simple: build clean, reliable, and scalable data solutions that
+            create measurable business value — the same mindset I applied while working
+            in industrial environments.
+          </p>
         </div>
       </div>
     </section>

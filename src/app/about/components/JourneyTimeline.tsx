@@ -12,49 +12,48 @@ interface TimelineEvent {
 
 export default function JourneyTimeline() {
   const timelineEvents: TimelineEvent[] = [
-    {
-      year: '2018',
-      title: 'Engineering Foundation',
-      description: 'Began engineering studies, developing strong analytical and problem-solving skills that would later become the foundation for data science expertise.',
-      icon: 'AcademicCapIcon',
-      category: 'education'
-    },
-    {
-      year: '2020',
-      title: 'Data Science Discovery',
-      description: 'Discovered passion for data analysis and machine learning. Started self-learning Python, statistics, and data visualization techniques.',
-      icon: 'LightBulbIcon',
-      category: 'skill'
-    },
-    {
-      year: '2021',
-      title: 'Professional Experience at CIPLA',
-      description: 'Joined CIPLA Ltd, applying engineering principles to real-world problems while developing expertise in data-driven decision making.',
-      icon: 'BriefcaseIcon',
-      category: 'work'
-    },
-    {
-      year: '2022',
-      title: 'Advanced Analytics Mastery',
-      description: 'Deepened expertise in machine learning algorithms, statistical modeling, and big data technologies. Completed multiple certification programs.',
-      icon: 'ChartBarIcon',
-      category: 'skill'
-    },
-    {
-      year: '2023',
-      title: 'Academic Excellence',
-      description: 'Graduated with CGPA 8.5, demonstrating consistent academic performance and deep understanding of technical concepts.',
-      icon: 'TrophyIcon',
-      category: 'education'
-    },
-    {
-      year: '2024',
-      title: 'Full-Stack Data Scientist',
-      description: 'Evolved into a comprehensive data science professional, bridging engineering discipline with modern ML/AI methodologies for business impact.',
-      icon: 'RocketLaunchIcon',
-      category: 'skill'
-    }
-  ];
+    
+  {
+    year: '2020–2024',
+    title: 'Electronics & Instrumentation Engineering',
+    description:
+      'Built strong foundations in sensors, control systems, PLCs, and process automation. Developed analytical thinking and problem-solving skills through core engineering projects and labs.',
+    icon: 'AcademicCapIcon',
+    category: 'education'
+  },
+  {
+    year: '2024',
+    title: 'CIPLA – Engineering Trainee (Instrumentation)',
+    description:
+      'Worked on BMS and SCADA systems, monitoring plant operations, troubleshooting instrumentation, and improving system reliability using real-time operational data.',
+    icon: 'BriefcaseIcon',
+    category: 'work'
+  },
+  {
+    year: '2024',
+    title: 'Data & Analytics Exposure',
+    description:
+      'Started analyzing operational data using Excel and Python to identify patterns, automate reports, and support faster decision-making in maintenance and troubleshooting.',
+    icon: 'ChartBarIcon',
+    category: 'skill'
+  },
+  {
+    year: '2025',
+    title: 'Transition to Data Science & ML',
+    description:
+      'Focused on SQL, statistics, machine learning, and end-to-end data projects. Built predictive models and dashboards while developing a strong foundation in practical data science.',
+    icon: 'LightBulbIcon',
+    category: 'skill'
+  },
+  {
+    year: '2025 (Ongoing)',
+    title: 'GenAI & Applied AI Projects',
+    description:
+      'Building AI-powered applications including disease diagnosis systems, smart assistants, and interactive web tools using React, Django, and modern ML/GenAI frameworks.',
+    icon: 'RocketLaunchIcon',
+    category: 'skill'
+  }
+];
 
   const getCategoryColor = (category: string) => {
     switch (category) {

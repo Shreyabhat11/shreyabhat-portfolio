@@ -25,7 +25,7 @@ const CTASection = () => {
           </Link>
 
           <a
-            href="mailto:shreyabhat224@gmail.com.com"
+            href="mailto:shreyabhat545@gmail.com"
             className="inline-flex items-center space-x-2 px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 focus-ring w-full sm:w-auto justify-center"
           >
             <Icon name="EnvelopeIcon" size={20} />
@@ -55,7 +55,7 @@ const CTASection = () => {
           </a>
 
           <a
-            href="mailto:shreyabhat224@gmail.com"
+            href="mailto:shreyabhat545@gmail.com"
             className="p-3 bg-white/10 backdrop-blur-sm rounded-full text-white hover:bg-white/20 transition-all duration-250 focus-ring"
             aria-label="Email Contact"
           >
