@@ -147,6 +147,7 @@ const Header = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            
             className="lg:hidden p-2 rounded-md text-text-secondary hover:text-text-primary hover:bg-muted transition-colors duration-250 focus-ring"
             aria-label="Toggle mobile menu"
           >
